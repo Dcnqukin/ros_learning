@@ -1,0 +1,50 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"middle_link" [label="middle_link"];
+"mid_up_link" [label="mid_up_link"];
+"top_link" [label="top_link"];
+"mustent_1" [label="mustent_1"];
+"mustent_2" [label="mustent_2"];
+"mustent_3" [label="mustent_3"];
+"mstent_1" [label="mstent_1"];
+"mstent_2" [label="mstent_2"];
+"mstent_3" [label="mstent_3"];
+"stent_1" [label="stent_1"];
+"stent_2" [label="stent_2"];
+"stent_3" [label="stent_3"];
+"wheel_1" [label="wheel_1"];
+"wheel_2" [label="wheel_2"];
+"wheel_3" [label="wheel_3"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "joint_base_middle" [label="xyz: 0 0 0.29 \nrpy: 0 -0 0"]
+"joint_base_middle" -> "middle_link"
+"middle_link" -> "joint_middle_midup" [label="xyz: 0 0 0.3 \nrpy: 0 -0 0"]
+"joint_middle_midup" -> "mid_up_link"
+"mid_up_link" -> "joint_middle_top" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"joint_middle_top" -> "top_link"
+"mid_up_link" -> "joint_midup_mustent1" [label="xyz: 0.352 0.14 0.1 \nrpy: 0 -0 0"]
+"joint_midup_mustent1" -> "mustent_1"
+"mid_up_link" -> "joint_midup_mustent2" [label="xyz: 0 -0.38 0.1 \nrpy: 0 -0 0"]
+"joint_midup_mustent2" -> "mustent_2"
+"mid_up_link" -> "joint_midup_mustent3" [label="xyz: -0.352 0.14 0.1 \nrpy: 0 -0 0"]
+"joint_midup_mustent3" -> "mustent_3"
+"middle_link" -> "joint_middle_mstent1" [label="xyz: 0.352 0.14 0.15 \nrpy: 0 -0 0"]
+"joint_middle_mstent1" -> "mstent_1"
+"middle_link" -> "joint_middle_mstent2" [label="xyz: 0 -0.38 0.15 \nrpy: 0 -0 0"]
+"joint_middle_mstent2" -> "mstent_2"
+"middle_link" -> "joint_middle_mstent3" [label="xyz: -0.352 0.14 0.15 \nrpy: 0 -0 0"]
+"joint_middle_mstent3" -> "mstent_3"
+"base_link" -> "joint_base_stent1" [label="xyz: 0.352 0.14 0.175 \nrpy: 0 -0 0"]
+"joint_base_stent1" -> "stent_1"
+"base_link" -> "joint_base_stent2" [label="xyz: 0 -0.38 0.175 \nrpy: 0 -0 0"]
+"joint_base_stent2" -> "stent_2"
+"base_link" -> "joint_base_stent3" [label="xyz: -0.352 0.14 0.175 \nrpy: 0 -0 0"]
+"joint_base_stent3" -> "stent_3"
+"base_link" -> "joint_base_wheel1" [label="xyz: 0 0.4 0 \nrpy: 0 1.5708 -1.57"]
+"joint_base_wheel1" -> "wheel_1"
+"base_link" -> "joint_base_wheel2" [label="xyz: 0.346 -0.2 0 \nrpy: 0 1.5708 -3.66069"]
+"joint_base_wheel2" -> "wheel_2"
+"base_link" -> "joint_base_wheel3" [label="xyz: -0.346 -0.2 0 \nrpy: 0 1.5708 0.520691"]
+"joint_base_wheel3" -> "wheel_3"
+}

@@ -1,0 +1,293 @@
+<?xml version ="1.0"?>
+<robot name="Home_Robot">
+       <link name="base_link">
+       	     <visual>
+		<geometry>
+		<cylinder length="0.01" radius="0.4"/>
+		</geometry>
+		<origin rpy= "0 0 0" xyz= "0 0 0.05"/>
+		<material name = "black">
+		 <color rgba= "0 0 0 1"/>
+		 </material>
+	     </visual>
+       </link>
+       <link name="wheel_1">
+       	     <visual>
+		<geometry>
+		<cylinder length="0.03" radius="0.05"/>
+		</geometry>
+		
+		<material name="white">
+		<color rgba ="1 1 1 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="wheel_2">
+       	     <visual>
+		<geometry>
+		<cylinder length="0.03" radius="0.05"/>
+		</geometry>
+		
+		<material name = "white">
+		 <color rgba= "1 1 1 1"/>
+		 </material>
+	     </visual>
+       </link>
+       <link name="wheel_3">
+       	     <visual>
+		<geometry>
+		<cylinder length="0.03" radius="0.05"/>
+		</geometry>
+		
+		<material name = "white">
+		 <color rgba= "1 1 1 1"/>
+		 </material>
+	     </visual>
+       </link>
+       <link name="stent_1">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .25"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="stent_2">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .25"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="stent_3">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .25"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name ="middle_link">
+	  <visual>
+		<geometry>
+		<cylinder length="0.01" radius="0.4"/>
+		</geometry>
+		
+		<material name = "black">
+		 <color rgba= "0 0 0 1"/>
+		 </material>
+	  </visual>
+       </link>
+       <link name="mstent_1">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .3"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="mstent_2">
+       	     <visual>
+		<geometry>
+		  <box size="0.03 .03 .3"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="mstent_3">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .3"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="mid_up_link">
+	<visual>
+		<geometry>
+		<cylinder length="0.01" radius="0.4"/>
+		</geometry>
+		
+		<material name = "black">
+		 <color rgba= "0 0 0 1"/>
+		 </material>
+	  </visual>
+       </link>
+       <link name="mustent_1">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .2"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="mustent_2">
+       	     <visual>
+		<geometry>
+		  <box size="0.03 .03 .2"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+       <link name="mustent_3">
+       	     <visual>
+		<geometry>
+		<box size="0.03 .03 .2"/>
+		</geometry>
+		
+		<material name="blue">
+		<color rgba= "0 0 0.8 1"/>
+		</material>
+	     </visual>
+       </link>
+
+
+        <link name="top_link">
+	<visual>
+		<geometry>
+		<cylinder length="0.01" radius="0.4"/>
+		</geometry>
+		
+		<material name = "black">
+		 <color rgba= "0 0 0 1"/>
+		 </material>
+	  </visual>
+       </link>
+
+       <link name="stent_kinect">
+	 <visual>
+	   <geometry>
+	     <box size="0.03 .03 .5"/>
+	   </geometry>
+	   <material name="white">
+	     <color rgba = "1 1 1 1"/>
+	   </material>
+	 </visual>
+       </link>
+
+       <sensor name="kinect" update_rate="20">
+	 <parent link="stent kinect"/>
+	   <origin xyz="0 0 0" rpy="0 0 0"/>
+	     <camera>
+	       <image width ="640" height="480" hfov="1.5708" format="RGB8" near="0.01" far="50.0"/>
+	     </camera>
+	   </sensor>
+       
+
+       <joint name="joint_base_wheel1" type="continuous">
+	 <axis xyz="0 0 1"/>
+       	      <parent link="base_link"/>
+	      <child link="wheel_1"/>
+	      <origin rpy="0 1.57 -1.57" xyz="0 0.4 0"/>
+	      <joint_properties damping="0.0" friction="0.0"/>
+       </joint>
+       <joint name="joint_base_wheel2" type="continuous">
+	 <axis xyz="0 0 1"/>
+       	      <parent link="base_link"/>
+	      <child link="wheel_2"/>
+	      <origin rpy="2.09 1.57 -1.57" xyz="0.346 -0.2 0"/>
+	      <joint_properties damping="0.0" friction="0.0"/>
+       </joint>
+       <joint name="joint_base_wheel3" type="continuous">
+	 <axis xyz="0 0 1"/>
+       	      <parent link="base_link"/>
+	      <child link="wheel_3"/>
+	      <origin rpy="-2.09 1.57 -1.57" xyz="-0.346 -0.2 0"/>
+	      <joint_properties damping="0.0" friction="0.0"/>
+       </joint>
+       <joint name="joint_base_stent1" type="fixed">
+	 <parent link = "base_link"/>
+	 <child link="stent_1"/>
+	 <origin rpy="0 0 0" xyz="0.352 0.14 0.175"/>
+       </joint>
+       <joint name="joint_base_stent2" type="fixed">
+	 <parent link = "base_link"/>
+	 <child link="stent_2"/>
+	 <origin rpy="0 0 0" xyz="0 -0.38 0.175"/>
+       </joint>
+       <joint name="joint_base_stent3" type="fixed">
+	 <parent link ="base_link"/>
+	 <child link="stent_3"/>
+	 <origin rpy="0 0 0" xyz="-0.352 0.14 0.175"/>
+       </joint>
+
+       
+       <joint name="joint_base_middle" type="fixed">
+	 <parent link ="base_link"/>
+	 <child link ="middle_link"/>
+	 <origin rpy = "0 0 0" xyz = "0 0 0.29"/>
+       </joint>
+       <joint name="joint_middle_mstent1" type="fixed">
+	 <parent link  = "middle_link"/>
+	 <child link ="mstent_1"/>
+	 <origin rpy="0 0 0" xyz="0.352 0.14 0.15"/>
+       </joint>
+       <joint name="joint_middle_mstent2" type="fixed">
+	 <parent link  = "middle_link"/>
+	 <child link ="mstent_2"/>
+	 <origin rpy="0 0 0" xyz="0 -0.38 0.15"/>
+       </joint>
+       <joint name="joint_middle_mstent3" type="fixed">
+	 <parent link  = "middle_link"/>
+	 <child link ="mstent_3"/>
+	 <origin rpy="0 0 0" xyz="-0.352 0.14 0.15"/>
+       </joint>
+
+
+       <joint name="joint_middle_midup" type="fixed">
+	 <parent link = "middle_link"/>
+	 <child link ="mid_up_link"/>
+	 <origin rpy = "0 0 0" xyz="0 0 0.3"/>
+       </joint>
+       <joint name="joint_midup_mustent1" type="fixed">
+        <parent link = "mid_up_link"/>
+        <child link ="mustent_1"/>
+        <origin rpy="0 0 0" xyz="0.352 0.14 0.1"/>
+       </joint>
+       <joint name="joint_midup_mustent2" type="fixed">
+        <parent link = "mid_up_link"/>
+        <child link ="mustent_2"/>
+        <origin rpy="0 0 0" xyz="0 -0.38 0.1"/>
+       </joint>
+       <joint name="joint_midup_mustent3" type="fixed">
+        <parent link = "mid_up_link"/>
+        <child link ="mustent_3"/>
+        <origin rpy="0 0 0" xyz="-0.352 0.14 0.1"/>
+       </joint>
+       <joint name="joint_middle_top" type="fixed">
+	 <parent link = "mid_up_link"/>
+	 <child link ="top_link"/>
+	 <origin rpy = "0 0 0" xyz = "0 0 0.2"/>
+       </joint>
+
+       <joint name="joint_top_kinect" type="fixed">
+	 <parent link = "top_link"/>
+	 <child link="stent_kinect"/>
+	 <origin rpy="0 0 0" xyz="0 0.38 0.25"/>
+       </joint>
+</robot>

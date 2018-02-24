@@ -1,0 +1,15 @@
+<package>
+  <description brief="homerobot_description">
+
+     homerobot_description
+
+  </description>
+  <author>FJH</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/homerobot_description</url>
+  <depend package="urdf"/>
+
+</package>
+
+
