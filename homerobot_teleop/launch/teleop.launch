@@ -1,0 +1,7 @@
+<launch>
+	<arg name = "cmd_topic" default = "cmd_vel"/>
+	<node pkg="homerobot_teleop" type= "script/teleop.py" name="homerobot_teleop">
+	<remap from = "cmd_vel" to ="$(arg cmd_topic)"/>
+	</node>
+</launch>
+	
